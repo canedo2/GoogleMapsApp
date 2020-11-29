@@ -4,8 +4,11 @@ import GoogleMaps
 
 class MapViewController: BaseViewController {
 
+    typealias MapResourceId = String
+    
     //MARK: - UI elements
     private var mapView: GMSMapView!
+    private var mapMarkersRegister = [MapResourceId:GMSMarker]()
     
     //MARK: - Control
     private var isMapInitialized = false
@@ -28,17 +31,31 @@ class MapViewController: BaseViewController {
     private func setupMapIfNeeded() {
         if !isMapInitialized {
             mapView = GMSMapView(frame: self.view.bounds)
+            mapView.setMinZoom(14, maxZoom: 20)
             self.view.addSubview(mapView)
             mapView.delegate = self
             isMapInitialized = true
             
             viewModel.output.mapResources.drive { [weak self] resources in
                 guard let self = self else { return }
-                self.mapView.clear()
+                //Clear old markers
+                let newResourcesIds = resources.map { resource -> MapResourceId in resource.id }
+                self.mapMarkersRegister.forEach { (key: MapResourceId, value: GMSMarker) in
+                    if !newResourcesIds.contains(key), let marker = self.mapMarkersRegister[key] {
+                        marker.map = nil
+                        self.mapMarkersRegister.removeValue(forKey: key)
+                    }
+                }
+                //Add new markers
                 resources.forEach { resource in
-                    let coord = CLLocationCoordinate2D(latitude: resource.y, longitude: resource.x)
-                    let marker = GMSMarker(position: coord)
-                    marker.map = self.mapView
+                    if !self.mapMarkersRegister.keys.contains(resource.id) {
+                        let coord = CLLocationCoordinate2D(latitude: resource.y, longitude: resource.x)
+                        let marker = GMSMarker(position: coord)
+                        marker.icon = GMSMarker.markerImage(with: ZoneIdToColorTransformer.transformToColor(zoneId: resource.companyZoneId))
+                        marker.title = resource.name
+                        marker.map = self.mapView
+                        self.mapMarkersRegister[resource.id] = marker
+                    }
                 }
             }.disposed(by:bag)
         }

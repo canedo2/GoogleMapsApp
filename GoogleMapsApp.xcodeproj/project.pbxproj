@@ -17,6 +17,7 @@
 		B32556A7256D6CEC004077C4 /* GoogleMapsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32556A6256D6CEC004077C4 /* GoogleMapsAppUITests.swift */; };
 		B32CA5EF256EE6CB0060DD0F /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = B32CA5EE256EE6CB0060DD0F /* test.json */; };
 		B32CA5F7256EE8A00060DD0F /* MapResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CA5F6256EE8A00060DD0F /* MapResource.swift */; };
+		B344B9DC25740D8B00B7B525 /* ZoneIdToColorTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B344B9DB25740D8B00B7B525 /* ZoneIdToColorTransformer.swift */; };
 		B347C36B256FE0F500D1B2A2 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347C36A256FE0F500D1B2A2 /* NumberFormatters.swift */; };
 		B3A2447C256D7A830006B01B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2447A256D7A830006B01B /* MapViewController.swift */; };
 		B3A2447D256D7A830006B01B /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3A2447B256D7A830006B01B /* MapViewController.xib */; };
@@ -74,6 +75,7 @@
 		B32556A8256D6CEC004077C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B32CA5EE256EE6CB0060DD0F /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		B32CA5F6256EE8A00060DD0F /* MapResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapResource.swift; sourceTree = "<group>"; };
+		B344B9DB25740D8B00B7B525 /* ZoneIdToColorTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneIdToColorTransformer.swift; sourceTree = "<group>"; };
 		B347C36A256FE0F500D1B2A2 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
 		B3A2447A256D7A830006B01B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B3A2447B256D7A830006B01B /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
@@ -169,7 +171,7 @@
 		B3255683256D6CEB004077C4 /* GoogleMapsApp */ = {
 			isa = PBXGroup;
 			children = (
-				B347C369256FE0E700D1B2A2 /* Formatters */,
+				B344B9DA25740D7100B7B525 /* Utils */,
 				B3FC8850256FCB15006B76AA /* Network */,
 				B32CA5FB256EE8A90060DD0F /* Models */,
 				B3255692256D6CEB004077C4 /* Info.plist */,
@@ -213,6 +215,15 @@
 				B32CA5F6256EE8A00060DD0F /* MapResource.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B344B9DA25740D7100B7B525 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B347C369256FE0E700D1B2A2 /* Formatters */,
+				B344B9DB25740D8B00B7B525 /* ZoneIdToColorTransformer.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B347C369256FE0E700D1B2A2 /* Formatters */ = {
@@ -540,6 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B344B9DC25740D8B00B7B525 /* ZoneIdToColorTransformer.swift in Sources */,
 				B3FC885F256FCCB0006B76AA /* NetworkRepository.swift in Sources */,
 				B3FC8852256FCB3E006B76AA /* MapResourcesRepository.swift in Sources */,
 				B3FC885A256FCB59006B76AA /* MapResourcesService.swift in Sources */,

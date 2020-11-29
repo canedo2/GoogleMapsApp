@@ -12,7 +12,6 @@ extension MapResourcesRepository {
 
     public func resources(lowerLeftLatLon: String, upperRightLatLon: String) -> Single<[MapResource]> {
         apiClient.rx.request(.resources(lowerLeftLatLon: lowerLeftLatLon, upperRightLatLon: upperRightLatLon))
-            .debug()
             .flatMap { result -> Single<[MapResource]> in
                 do {
                     let resources = try JSONDecoder().decode([MapResource].self, from: result.data)
