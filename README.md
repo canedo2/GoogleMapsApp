@@ -1,3 +1,6 @@
+
+![alt tag](https://www.udrop.com/cache/plugins/filepreviewer/71841/a212901837280f70d4034d16ac46a079a7494022faa062c670d53ed54a64b7fb/1100x800_cropped.jpg "iPhone 12 Pro Max screenshot")
+
 # GoogleMapsApp
 
 Google maps app is an app coded as a technical test in late November 2020
