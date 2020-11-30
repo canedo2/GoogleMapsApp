@@ -11,8 +11,8 @@ Google maps app is an app coded as a technical test in late November 2020
 * Requests to endpoint via Moya abstraction layer
 * Parse JSON objects via Decodable protocol
 * Simple use of Google Maps SDK for iOS: control of camera, use of SDK delegates, markers, use of marker default detail layer...
-* A _random_ way to randomize colors (Pending to test)
-* Tests (WIP)
+* A _random_ way to randomize colors
+* A little piece of tests
 
 ## Articles
 
