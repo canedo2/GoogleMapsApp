@@ -11,8 +11,4 @@ target 'GoogleMapsApp' do
     # Pods for testing
   end
 
-  target 'GoogleMapsAppUITests' do
-    # Pods for testing
-  end
-
 end
